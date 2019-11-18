@@ -65,7 +65,7 @@ class Login extends StatelessWidget {
                                           BorderRadiusDirectional.circular(5)),
                                   color: Colors.white,
                                   textColor: Colors.grey,
-                                  onPressed: () async{
+                                  onPressed: () async {
                                     var user = await signInWithGoogle();
                                     _showDialog(user.displayName);
                                   })),

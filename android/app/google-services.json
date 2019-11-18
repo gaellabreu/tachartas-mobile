@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "886435257495",
+    "firebase_url": "https://tachartas-1571789320227.firebaseio.com",
+    "project_id": "tachartas-1571789320227",
+    "storage_bucket": "tachartas-1571789320227.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:886435257495:android:0efc549678212061565dd2",
+        "android_client_info": {
+          "package_name": "com.example.tachartas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "886435257495-t5l4jvmnp6htkben9el0aqssfo94bg4k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tachartas",
+            "certificate_hash": "47026f710fa5d638f05d89554b86518955dfab2f"
+          }
+        },
+        {
+          "client_id": "886435257495-nmsik9g55rihr1ifsldioeqemoc6gvt1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCcwYUlaVT3BYhNq-3RBaHuoWPU93RxuI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "886435257495-nmsik9g55rihr1ifsldioeqemoc6gvt1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "886435257495-c5pbun19t83jj46hglm64v0jeif4h60r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.perros.tachartas"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
