@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
+import '../google_sign_in.dart';
 
 class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    void _showDialog(String username) {
+      showDialog(
+          context: context,
+          builder: (BuildContext context) => AlertDialog(
+              title: const Text('Logged in with google'),
+              content: Text('Welcome $username')));
+    }
+
     return Stack(
       children: <Widget>[
         Container(
@@ -43,22 +52,23 @@ class Login extends StatelessWidget {
                           )),
                           Container(height: 10),
                           FractionallySizedBox(
-                            widthFactor: 1,
-                            child: RaisedButton.icon(
-                              icon: Image.asset(
-                                'assets/gmail.png',
-                                height: 30,
-                                alignment: Alignment.bottomLeft,
-                              ),
-                              label: const Text('Sign in with Google'),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius:
-                                      BorderRadiusDirectional.circular(5)),
-                              color: Color.fromRGBO(221, 76, 57, 1),
-                              textColor: Colors.white,
-                              onPressed: () => {},
-                            ),
-                          ),
+                              widthFactor: 1,
+                              child: RaisedButton.icon(
+                                  icon: Image.asset(
+                                    'assets/google_logo.png',
+                                    height: 30,
+                                    alignment: Alignment.bottomLeft,
+                                  ),
+                                  label: const Text('Sign in with Google'),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                          BorderRadiusDirectional.circular(5)),
+                                  color: Colors.white,
+                                  textColor: Colors.grey,
+                                  onPressed: () async{
+                                    var user = await signInWithGoogle();
+                                    _showDialog(user.displayName);
+                                  })),
                           FractionallySizedBox(
                             widthFactor: 1,
                             child: RaisedButton.icon(
@@ -69,7 +79,7 @@ class Login extends StatelessWidget {
                                       BorderRadiusDirectional.circular(5)),
                               color: Color.fromRGBO(59, 89, 152, 1),
                               textColor: Colors.white,
-                              onPressed: () => {},
+                              onPressed: () => signOutGoogle(),
                             ),
                           ),
                           Container(height: 10),
