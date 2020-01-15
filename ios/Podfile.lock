@@ -4,8 +4,6 @@ PODS:
     - AppAuth/ExternalUserAgent (= 1.2.0)
   - AppAuth/Core (1.2.0)
   - AppAuth/ExternalUserAgent (1.2.0)
-  - Firebase/Analytics (6.11.0):
-    - Firebase/Core
   - Firebase/Auth (6.11.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.3.1)
@@ -104,11 +102,9 @@ PODS:
   - nanopb/encode (0.3.901)
 
 DEPENDENCIES:
-  - Firebase/Analytics
-  - Firebase/Auth
   - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
-  - Flutter (from `.symlinks/flutter/ios`)
+  - Flutter (from `Flutter`)
   - google_sign_in (from `.symlinks/plugins/google_sign_in/ios`)
 
 SPEC REPOS:
@@ -137,7 +133,7 @@ EXTERNAL SOURCES:
   firebase_core:
     :path: ".symlinks/plugins/firebase_core/ios"
   Flutter:
-    :path: ".symlinks/flutter/ios"
+    :path: Flutter
   google_sign_in:
     :path: ".symlinks/plugins/google_sign_in/ios"
 
@@ -164,6 +160,6 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 43b8b64263023d4f32caa0b40f4c8bfa3c5f36d8
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: 5cad84ef02077f40ff0c35d660f311b80319ab8d
+PODFILE CHECKSUM: 1b66dae606f75376c5f2135a8290850eeb09ae83
 
 COCOAPODS: 1.6.1
