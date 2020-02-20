@@ -22,7 +22,6 @@ Future<FirebaseUser> signInWithGoogle() async {
 
   final FirebaseUser currentUser = await _auth.currentUser();
   assert(user.uid == currentUser.uid);
-
   return user;
 }
 void signOutGoogle() async{

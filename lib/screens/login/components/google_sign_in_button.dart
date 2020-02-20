@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tachartas/google_sign_in.dart';
 
 class GoogleSignInButton extends StatelessWidget {
   @override
@@ -6,7 +7,7 @@ class GoogleSignInButton extends StatelessWidget {
     return RaisedButton(
       padding: EdgeInsets.only(left: 1.5, right: 20),
       color: Color.fromRGBO(66, 133, 244, 1),
-      onPressed: () => {},
+      onPressed: () => signInWithGoogle(),
       child: Row(
         children: <Widget>[
           Container(

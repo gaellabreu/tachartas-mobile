@@ -1,36 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:tachartas/screens/login/clases/toggler.dart';
 
 class Toggler extends StatefulWidget {
   @override
   _TogglerState createState() => _TogglerState();
 }
 
-class _TogglerState extends State<Toggler> {
+class _TogglerState extends State<Toggler> with SingleTickerProviderStateMixin{
   bool toggleValue = false;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => toggleButton(),
           child: AnimatedContainer(
-        curve: Curves.fastLinearToSlowEaseIn,
+        curve: Curves.easeOutCirc,
         duration: Duration(milliseconds: 500),
-        height: MediaQuery.of(context).size.height * 0.06,
+        height: 50,
         width: MediaQuery.of(context).size.width * 0.75,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50), color: Colors.black26),
         child: Stack(
           children: <Widget>[
             AnimatedPositioned(
-              curve: Curves.fastLinearToSlowEaseIn,
+              curve: Curves.easeOutCirc,
               duration: Duration(milliseconds: 500),
-              top: 3,
               left: toggleValue ? MediaQuery.of(context).size.width * 0.4 : 1,
               right: toggleValue ? 1 : MediaQuery.of(context).size.width * 0.4,
               child: AnimatedSwitcher(
                 duration: Duration(milliseconds: 500),
                 child: ButtonTheme(
                   buttonColor: Colors.white,
-                  height: MediaQuery.of(context).size.height * 0.05,
+                  height: 50,
                   minWidth: MediaQuery.of(context).size.height * 0.3,
                   child: RaisedButton(
                       onPressed: () => toggleButton(),
@@ -62,5 +64,8 @@ class _TogglerState extends State<Toggler> {
     );
   }
 
-  toggleButton() => this.setState(() => toggleValue = !toggleValue);
+  toggleButton(){
+    Provider.of<Switcher>(context, listen: false).toggle();
+    this.setState(() => toggleValue = Provider.of<Switcher>(context, listen: false).items);
+  }
 }

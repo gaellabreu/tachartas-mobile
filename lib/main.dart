@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
-import './screens/login/login.dart';
+import 'package:provider/provider.dart';
 
-void main() => runApp(MyApp());
+import './screens/login/login.dart';
+import 'screens/login/clases/toggler.dart';
+
+void main() => runApp(
+  ChangeNotifierProvider(
+    create: (_) => Switcher(),
+    child: MyApp(),
+  )
+  );
 
 class MyApp extends StatelessWidget {
   @override
